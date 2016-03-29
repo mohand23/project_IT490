@@ -47,6 +47,8 @@ $(document).ready(function(){
         <h2 class="form-signin-heading">Aircraft</h2><hr />
         <button class="btn btn-info" type="button" id="btn-add"> <span class="glyphicon glyphicon-pencil"></span> &nbsp; Add Aircraft</button>
         <button class="btn btn-info" type="button" id="btn-view"> <span class="glyphicon glyphicon-eye-open"></span> &nbsp; View Aircraft</button>
+        <button  type="button" class="btn pull-right">Home</button>
+                <button  type="button" class="btn pull-right">Back</button>
         <hr />
         
         <div class="content-loader">
@@ -56,8 +58,7 @@ $(document).ready(function(){
         <tr>
         <th>Tail Number</th>
         <th>Aircraft Type</th>
-        <th>edit</th>
-        <th>delete</th>
+        <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -78,10 +79,9 @@ $(document).ready(function(){
       
 			<td align="center">
 			<a id="<?php echo $row['TailNumber']; ?>" class="edit-link" href="#" title="Edit">
-			<img src="edit.png" width="20px" />
-            </a></td>
-			<td align="center"><a id="<?php echo $row['TailNumber']; ?>" class="delete-link" href="#" title="Delete">
-			<img src="delete.png" width="20px" />
+			Edit
+            </a> /<a id="<?php echo $row['TailNumber']; ?>" class="delete-link" href="#" title="Delete">
+			Delete
             </a></td>
 			</tr>
 			<?php

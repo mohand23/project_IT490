@@ -57,8 +57,7 @@ $(document).ready(function(){
         <th>AircrewID</th>
         <th>PilotName</th>
         <th>NavigatorName</th>
-        <th>edit</th>
-        <th>delete</th>
+        <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -79,10 +78,9 @@ $(document).ready(function(){
       
 			<td align="center">
 			<a id="<?php echo $row['AircrewID']; ?>" class="edit-link" href="#" title="Edit">
-			<img src="edit.png" width="20px" />
-            </a></td>
-			<td align="center"><a id="<?php echo $row['AircrewID']; ?>" class="delete-link" href="#" title="Delete">
-			<img src="delete.png" width="20px" />
+			Edit
+            </a> /<a id="<?php echo $row['AircrewID']; ?>" class="delete-link" href="#" title="Delete">
+			Delete
             </a></td>
 			</tr>
 			<?php

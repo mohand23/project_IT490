@@ -45,7 +45,7 @@ $(document).ready(function(){
 	<div class="container">
       
         <h2 class="form-signin-heading">Skid ID</h2><hr />
-        <h5 class="form-signin-heading"> ***   Please note if a SkidId does  not have a Title it is attached to a Flightnumber and on a Mission   *** </h5><hr />
+        <h5 class="form-signin-heading" style="color: red;"> ***   Please note if a SkidId does  not have a Title it is attached to a Flightnumber and on a Mission   *** </h5><hr />
         <button class="btn btn-info" type="button" id="btn-add"> <span class="glyphicon glyphicon-pencil"></span> &nbsp; Add Skid ID</button>
         <button class="btn btn-info" type="button" id="btn-view"> <span class="glyphicon glyphicon-eye-open"></span> &nbsp; View Skid ID</button>
         <hr />
@@ -59,8 +59,7 @@ $(document).ready(function(){
         <th>SkidWeight</th>
         <th>SkidContents</th>
         <th>Title</th>
-        <th>edit</th>
-        <th>delete</th>
+        <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -81,10 +80,9 @@ $(document).ready(function(){
       
 			<td align="center">
 			<a id="<?php echo $row['SkidID']; ?>" class="edit-link" href="#" title="Edit">
-			<img src="edit.png" width="20px" />
-            </a></td>
-			<td align="center"><a id="<?php echo $row['SkidID']; ?>" class="delete-link" href="#" title="Delete">
-			<img src="delete.png" width="20px" />
+			Edit
+            </a> /<a id="<?php echo $row['SkidID']; ?>" class="delete-link" href="#" title="Delete">
+			Delete
             </a></td>
 			</tr>
 			<?php

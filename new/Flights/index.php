@@ -64,8 +64,7 @@ $(document).ready(function(){
 		<th>DestinationAirport</th>
         <th>Fuel</th>
         <th>SkidID</th>
-        <th>edit</th>
-        <th>delete</th>
+        <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -91,11 +90,10 @@ $(document).ready(function(){
       
       
 			<td align="center">
-			<a id="<?php echo $row['FlightNumber']; ?>" class="edit-link" href="#" title="Edit">
-			<img src="edit.png" width="20px" />
-            </a></td>
-			<td align="center"><a id="<?php echo $row['FlightNumber']; ?>" class="delete-link" href="#" title="Delete">
-			<img src="delete.png" width="20px" />
+			<a id="<?php echo $row['SkidID']; ?>" class="edit-link" href="#" title="Edit">
+			Edit
+            </a> /<a id="<?php echo $row['SkidID']; ?>" class="delete-link" href="#" title="Delete">
+			Delete
             </a></td>
 			</tr>
 			<?php

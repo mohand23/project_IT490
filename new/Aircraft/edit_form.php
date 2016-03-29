@@ -31,7 +31,23 @@ if($_GET['edit_id'])
  		<input type='hidden' name='id' value='<?php echo $row['TailNumber']; ?>' />
         <tr>
             <td>Aircraft Type</td>
-            <td><input type='text' name='AircraftType' class='form-control'  value='<?php echo $row['AircraftType']; ?>' required></td>
+            <td>
+            		<select class="select form-control" name="AircraftType">
+                        <?php
+                           mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
+                           mysql_select_db('ap725');
+                           
+                           $sql = "SELECT AircraftType FROM Aircraft Group by AircraftType";
+                           $result = mysql_query($sql);
+                           
+                           while ($row = mysql_fetch_array($result)) {
+                               echo "<option value='" . $row['AircraftType'] . "'>" . $row['AircraftType'] . "</option>";
+                           	}
+                           
+                                    ?>
+                     </select>
+            
+            </td>
         </tr>
  
  

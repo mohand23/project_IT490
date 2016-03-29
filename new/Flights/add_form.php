@@ -1,4 +1,4 @@
-
+   <script type="text/javascript" src="maxlength.js"></script>
 <style type="text/css">
 #dis{
 	display:none;
@@ -42,7 +42,7 @@
         
  
         <tr>
-            <td>Previous Airport</td>
+            <td>Previous Airport<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></td>
             <td><select class="select form-control" name="PreviousAirport">
                         <?php
                            mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
