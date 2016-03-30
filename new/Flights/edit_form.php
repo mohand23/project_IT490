@@ -34,7 +34,7 @@ if($_GET['edit_id'])
  
         <tr>
             <td>Flight Number</td>
-            <td><input type="number" data-maxsize="4" class="form-control" name="FlightNumber" placeholder="Ex. 1234" value='<?php echo $row['FlightNumber']; ?>' required="required">
+            <td><input type="number" data-maxsize="6" class="form-control" name="FlightNumber" placeholder="Ex. 123456" value='<?php echo $row['FlightNumber']; ?>' required="required">
         </tr>
  
         <tr>
@@ -58,16 +58,16 @@ if($_GET['edit_id'])
  
         <tr>
             <td>Previous Airport</td>
-            <td><select class="select form-control" name="PreviousAirport" value='<?php echo $row['DepartureDate']; ?>' required>
+            <td><select class="select form-control" name="PreviousAirport" value='<?php echo $row['PreviousAirport']; ?>' required>
                         <?php
                            mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
                            mysql_select_db('ap725');
                            
-                           $sql = "SELECT Title FROM Airport";
+                           $sql = "SELECT PreviousAirport FROM Airport";
                            $result = mysql_query($sql);
                            
                            while ($row = mysql_fetch_array($result)) {
-                               echo "<option value='" . $row['Title'] . "'>" . $row['Title'] . "</option>";
+                               echo "<option value='" . $row['PreviousAirport'] . "'>" . $row['PreviousAirport'] . "</option>";
                            	}
                            
                                     ?>
@@ -81,11 +81,11 @@ if($_GET['edit_id'])
                            mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
                            mysql_select_db('ap725');
                            
-                           $sql = "SELECT Title FROM Airport";
+                           $sql = "SELECT DestinationAirport FROM Airport";
                            $result = mysql_query($sql);
                            
                            while ($row = mysql_fetch_array($result)) {
-                               echo "<option value='" . $row['Title'] . "'>" . $row['Title'] . "</option>";
+                               echo "<option value='" . $row['DestinationAirport'] . "'>" . $row['DestinationAirport'] . "</option>";
                            	}
                            
                                     ?>
@@ -93,7 +93,7 @@ if($_GET['edit_id'])
         </tr>
 		<tr>
             <td>Arrival Date</td>
-            <td><input type="date"  name='Tail Number' class='form-control' value='<?php echo $row['ArrivalDate']; ?>'  required /></td>
+            <td><input type="date"  name='Arrival Date' class='form-control' value='<?php echo $row['ArrivalDate']; ?>'  required /></td>
         </tr>
  
         <tr>

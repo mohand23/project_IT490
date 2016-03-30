@@ -78,9 +78,9 @@ $(document).ready(function(){
       
       
 			<td align="center">
-			<a id="<?php echo $row['SkidID']; ?>" class="edit-link" href="#" title="Edit">
+			<a id="<?php echo $row['Title']; ?>" class="edit-link" href="#" title="Edit">
 			Edit
-            </a> /<a id="<?php echo $row['SkidID']; ?>" class="delete-link" href="#" title="Delete">
+            </a> /<a id="<?php echo $row['Title']; ?>" class="delete-link" href="#" title="Delete">
 			Delete
             </a></td>
 			</tr>

@@ -1,4 +1,4 @@
-   <script type="text/javascript" src="maxlength.js"></script>
+
 <style type="text/css">
 #dis{
 	display:none;
@@ -19,12 +19,12 @@
  
         <tr>
             <td>Flight Number</td>
-            <td><input type="number" data-maxsize="4" class="form-control" name="FlightNumber" placeholder="Ex. 1234" required="required">
+            <td><input type='number' name='FlightNumber' class='form-control'   required /></td>
         </tr>
  
         <tr>
             <td>Aircrew ID</td>
-            <td><select class="select form-control" name="AircrewID">
+             <td><select class="select form-control" name="AircrewID">
                         <?php
                            mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
                            mysql_select_db('ap725');
@@ -42,7 +42,7 @@
         
  
         <tr>
-            <td>Previous Airport<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></td>
+            <td>Previous Airport</td>
             <td><select class="select form-control" name="PreviousAirport">
                         <?php
                            mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
@@ -60,50 +60,13 @@
         </tr>
 		
 		<tr>
-            <td>Destination  Airport</td>
-            <td><select class="select form-control" name="DestinationAirport">
-                        <?php
-                           mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
-                           mysql_select_db('ap725');
-                           
-                           $sql = "SELECT Title FROM Airport";
-                           $result = mysql_query($sql);
-                           
-                           while ($row = mysql_fetch_array($result)) {
-                               echo "<option value='" . $row['Title'] . "'>" . $row['Title'] . "</option>";
-                           	}
-                           
-                                    ?>
-                        </select></td>
-        </tr>
-		<tr>
             <td>Arrival Date</td>
-            <td><input type="date"  name='Tail Number' class='form-control'   required /></td>
+            <td><input type='date' name='ArrivalDate' class='form-control'  required></td>
         </tr>
- 
-        <tr>
-            <td>Departure Date</td>
-            <td><input type="date" class="form-control" name="DepartureDate"    required></td>
-        </tr>
- 
-        <tr>
-            <td>Aircraft Type</td>
-            <td><select id="AircraftType" name ="AircraftType" class="select form-control" required="required" onchange="showForm()">
-               <option >Select Type</option>
-               <option value='B737'>B737</option>
-               <option value='B747'>B747</option>
-               <option value='B767'>B767</option>
-               <option value='B777'>B777</option>
-               <option value='B787'>B787</option>
-			</select>
-    	</div>	</td>
-        </tr>
-		
 		<tr>
             <td>Tail Number</td>
             <td>
-            			<div id="f1" style="display:none"
-			    <form name="TailNumber">
+			    <form name="TailNumber" id="f1" style="display:none">
 			        <select id="TailNumber" class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
@@ -119,9 +82,7 @@
 		            ?>
 			        </select>
 			    </form>
-			</div>
-			<div id="f2" style="display:none">
-			    <form name="TailNumber">
+			    <form name="TailNumber" id="f2" style="display:none">
 			        <select id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
@@ -136,10 +97,8 @@
 		
 		            ?>
 			        </select>
-			    </form>
-			</div>	
-			<div id="f3" style="display:none">
-			    <form name="TailNumber">
+			    </form>	
+			    <form name="TailNumber" id="f3" style="display:none">
 			        <select id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
@@ -155,9 +114,7 @@
 		            ?>
 			        </select>
 			    </form>
-			</div>
-			<div id="f4" style="display:none">
-			    <form name="TailNumber">
+			    <form name="TailNumber" id="f4" style="display:none">
 			        <select id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
@@ -173,9 +130,7 @@
 		            ?>
 			        </select>
 			    </form>
-			</div>
-			<div id="f5" style="display:none">
-			    <form name="TailNumber">
+			    <form name="TailNumber"id="f5" style="display:none">
 			        <select id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
@@ -191,9 +146,7 @@
 		            ?>
 			        </select>
 			    </form>
-			</div>
-			<div id="f6" style="display:none">
-			    <form name="TailNumber">
+			    <form name="TailNumber" id="f6" style="display:none">
 			        <select id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
@@ -208,8 +161,7 @@
 		
 		            ?>
 			        </select>
-			    </form>
-			</div>			
+			    </form>			
 			<script type="text/javascript">
 			        function showForm() {
         var selopt = document.getElementById("AircraftType").value;
@@ -267,12 +219,47 @@
 
         }
     }
-			</script>			        			        			        
+	</script>			        			        			        
 		</td>
+        </tr>
+        <tr>
+            <td>Aircraft Type</td>
+            <td><select id="AircraftType" name ="AircraftType" class="select form-control" required="required" onchange="showForm()">
+               <option >Select Type</option>
+               <option value='B737'>B737</option>
+               <option value='B747'>B747</option>
+               <option value='B767'>B767</option>
+               <option value='B777'>B777</option>
+               <option value='B787'>B787</option>
+			</select>
+    	</div>	</td>
+        </tr>
+ 
+        <tr>
+            <td>Departure Date</td>
+            <td><input type='date' name='DepartureDate' class='form-control'  required></td>
+        </tr>
+		
+		<tr>
+            <td>Destination Airport</td>
+            <td><select class="select form-control" name="DestinationAirport">
+                        <?php
+                           mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
+                           mysql_select_db('ap725');
+                           
+                           $sql = "SELECT Title FROM Airport";
+                           $result = mysql_query($sql);
+                           
+                           while ($row = mysql_fetch_array($result)) {
+                               echo "<option value='" . $row['Title'] . "'>" . $row['Title'] . "</option>";
+                           	}
+                           
+                                    ?>
+                        </select></td>
         </tr>
 		<tr>
             <td>Fuel</td>
-            <td><input type="number" data-maxsize="5" class="form-control" name="Fuel" placeholder="Ex. 12345"></td>
+            <td><input type='number' name='Fuel' class='form-control'   required /></td>
         </tr>
  
         <tr>

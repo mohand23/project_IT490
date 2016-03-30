@@ -55,13 +55,13 @@ $(document).ready(function(){
         <thead>
         <tr>
         <th>Flight Number</th>
-        <th>AircrewID</th>
-        <th>PreviousAirport</th>
-        <th>ArrivalDate</th>
-		<th>TailNumber</th>
-        <th>AircraftType</th>
-		<th>DepartureDate</th>
-		<th>DestinationAirport</th>
+        <th>Aircrew ID</th>
+        <th>Previous Airport</th>
+        <th>Arrival Date</th>
+		<th>Tail Number</th>
+        <th>Aircraft Type</th>
+		<th>Departure Date</th>
+		<th>Destination Airport</th>
         <th>Fuel</th>
         <th>SkidID</th>
         <th>Action</th>
@@ -71,7 +71,7 @@ $(document).ready(function(){
         <?php
         require_once 'dbconfig.php';
         
-        $stmt = $db_con->prepare("SELECT * FROM Airport");
+        $stmt = $db_con->prepare("SELECT * FROM Flights");
         $stmt->execute();
 		while($row=$stmt->fetch(PDO::FETCH_ASSOC))
 		{
@@ -90,9 +90,9 @@ $(document).ready(function(){
       
       
 			<td align="center">
-			<a id="<?php echo $row['SkidID']; ?>" class="edit-link" href="#" title="Edit">
+			<a id="<?php echo $row['FlightNumber']; ?>" class="edit-link" href="#" title="Edit">
 			Edit
-            </a> /<a id="<?php echo $row['SkidID']; ?>" class="delete-link" href="#" title="Delete">
+            </a> /<a id="<?php echo $row['FlightNumber']; ?>" class="delete-link" href="#" title="Delete">
 			Delete
             </a></td>
 			</tr>

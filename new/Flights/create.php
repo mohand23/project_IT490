@@ -19,7 +19,7 @@ require_once 'dbconfig.php';
 		try{
 			
 			$stmt = $db_con->prepare("INSERT INTO Flights(FlightNumber,AircrewID,PreviousAirport,ArrivalDate,TailNumber,AircraftType,DepartureDate,DestinationAirport,Fuel,SkidID)
-			VALUES(:FlightNumber, :AircrewID, :PreviousAirport, :ArrivalDate, :TailNumber, :AircraftType, :DepartureDate, :AirportName, :DestinationAirport, :Fuel, :SkidID )");
+			VALUES(:FlightNumber, :AircrewID, :PreviousAirport, :ArrivalDate, :TailNumber, :AircraftType, :DepartureDate, :DestinationAirport, :Fuel, :SkidID )");
 			$stmt->bindParam(":FlightNumber", $FlightNumber);
 			$stmt->bindParam(":AircrewID", $AircrewID);
 			$stmt->bindParam(":PreviousAirport", $PreviousAirport);
