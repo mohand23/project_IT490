@@ -28,7 +28,7 @@ require_once 'dbconfig.php';
 		$stmt->bindParam(":id", $id);
 		
 		
-		$stmt->bindParam(":id", $id);
+	
 		
 		if($stmt->execute())
 		{

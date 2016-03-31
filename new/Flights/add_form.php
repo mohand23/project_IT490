@@ -19,7 +19,7 @@
  
         <tr>
             <td>Flight Number</td>
-            <td><input type="number" data-maxsize="6" class="form-control" name="FlightNumber" placeholder="Ex. 123456" required="required">
+            <td><input type="number" data-maxsize="6" class="form-control" name="FlightNumber" placeholder="Ex. 123456" required="required"></td>
         </tr>
  
         <tr>
@@ -42,7 +42,7 @@
         
  
         <tr>
-            <td>Previous Airport<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></td>
+            <td>Previous Airport</td>
             <td><select class="select form-control" name="PreviousAirport">
                         <?php
                            mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
@@ -96,7 +96,7 @@
                <option value='B777'>B777</option>
                <option value='B787'>B787</option>
 			</select>
-    	</div>	</td>
+    		</td>
         </tr>
 		
 		<tr>
@@ -117,6 +117,7 @@
 		
 		            ?>
 			        </select>
+                       
 			</div>
 			<div id="f2" style="display:none">
 			        <select id="TailNumber" name="TailNumber" class="select form-control" onchange="showForm()">
@@ -270,7 +271,7 @@
                            mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
                            mysql_select_db('ap725');
                            
-                           $sql = "SELECT SkidID FROM Cargo";
+                           $sql = "SELECT SkidID FROM Cargo where Title is not NULL ";
                            $result = mysql_query($sql);
                            
                            while ($row = mysql_fetch_array($result)) {

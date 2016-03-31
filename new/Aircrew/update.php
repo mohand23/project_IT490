@@ -9,8 +9,8 @@ require_once 'dbconfig.php';
 		$NavigatorName = $_POST['NavigatorName'];
 		
 		
-		$stmt = $db_con->prepare("UPDATE Aircrew SET PilotName=:en, NavigatorName=:ed WHERE AircrewID=:id");
-		$stmt->bindParam(":en", $PilotName);
+		$stmt = $db_con->prepare("UPDATE Aircrew SET PilotName=:lol, NavigatorName=:ed WHERE AircrewID=:id");
+		$stmt->bindParam(":lol", $PilotName);
 		$stmt->bindParam(":ed", $NavigatorName);
 		$stmt->bindParam(":id", $id);
 		

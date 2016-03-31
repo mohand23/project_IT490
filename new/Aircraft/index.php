@@ -47,8 +47,10 @@ $(document).ready(function(){
         <h2 class="form-signin-heading">Aircraft</h2><hr />
         <button class="btn btn-info" type="button" id="btn-add"> <span class="glyphicon glyphicon-pencil"></span> &nbsp; Add Aircraft</button>
         <button class="btn btn-info" type="button" id="btn-view"> <span class="glyphicon glyphicon-eye-open"></span> &nbsp; View Aircraft</button>
-        <button  type="button" class="btn pull-right">Home</button>
-                <button  type="button" class="btn pull-right">Back</button>
+        
+        <a href="../../index.html" class="btn btn-success btn pull-right"><span class="glyphicon glyphicon-home"></span> Homepage</a>
+        <a href="../new.html" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+        
         <hr />
         
         <div class="content-loader">
@@ -78,10 +80,12 @@ $(document).ready(function(){
       
       
 			<td align="center">
-			<a id="<?php echo $row['TailNumber']; ?>" class="edit-link" href="#" title="Edit">
-			Edit
-            </a> /<a id="<?php echo $row['TailNumber']; ?>" class="delete-link" href="#" title="Delete">
-			Delete
+			
+      <a href="#" id="<?php echo $row['TailNumber']; ?>"  class="btn btn-primary btn-xs edit-link"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+			
+            
+            <a href="#" id="<?php echo $row['TailNumber']; ?>" class="btn btn-danger btn-xs delete-link"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+			
             </a></td>
 			</tr>
 			<?php

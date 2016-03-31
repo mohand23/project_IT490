@@ -1,5 +1,4 @@
-   <script type="text/javascript" src="maxlength.js"></script>
-
+ <script type="text/javascript" src="maxlength.js"></script>
 <style type="text/css">
 #dis{
 	display:none;
@@ -20,7 +19,7 @@
  
         <tr>
             <td>Aircrew ID</td>
-            <td><input type='number' name='AircrewID' class='form-control'  data-maxsize="4" placeholder='EX : 1234' required /></td>
+            <td><input type='number' data-maxsize="4" name='AircrewID' class='form-control'  placeholder='EX : 1234' required /></td>
         </tr>
  
         <tr>

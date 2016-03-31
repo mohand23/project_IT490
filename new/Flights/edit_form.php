@@ -26,20 +26,14 @@ if($_GET['edit_id'])
         
  	
 	 <form method='post' id='emp-UpdateForm' action='#'>
- 
-    <table class='table table-bordered'>
 
  
     <table class='table table-bordered'>
- 
-        <tr>
-            <td>Flight Number</td>
-            <td><input type="number" data-maxsize="6" class="form-control" name="FlightNumber" placeholder="Ex. 123456" value='<?php echo $row['FlightNumber']; ?>' required="required">
-        </tr>
+    <input type='hidden' name='id' value='<?php echo $row['FlightNumber']; ?>' />
  
         <tr>
             <td>Aircrew ID</td>
-            <td><select class="select form-control" name="AircrewID" value='<?php echo $row['AircrewID']; ?>'>
+            <td><select class="select form-control" id="AircrewID" name="AircrewID" value='<?php echo $row['AircrewID']; ?>' required>
                         <?php
                            mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
                            mysql_select_db('ap725');
@@ -58,16 +52,16 @@ if($_GET['edit_id'])
  
         <tr>
             <td>Previous Airport</td>
-            <td><select class="select form-control" name="PreviousAirport" value='<?php echo $row['PreviousAirport']; ?>' required>
+            <td><select class="select form-control" id="PreviousAirport" name="PreviousAirport" value='<?php echo $row['PreviousAirport']; ?>' required>
                         <?php
                            mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
                            mysql_select_db('ap725');
                            
-                           $sql = "SELECT PreviousAirport FROM Airport";
+                           $sql = "SELECT Title FROM Airport";
                            $result = mysql_query($sql);
                            
                            while ($row = mysql_fetch_array($result)) {
-                               echo "<option value='" . $row['PreviousAirport'] . "'>" . $row['PreviousAirport'] . "</option>";
+                               echo "<option value='" . $row['Title'] . "'>" . $row['Title'] . "</option>";
                            	}
                            
                                     ?>
@@ -75,17 +69,17 @@ if($_GET['edit_id'])
         </tr>
 		
 		<tr>
-            <td>Destination  Airport</td>
-            <td><select class="select form-control" name="DestinationAirport" value='<?php echo $row['DestinationAirport']; ?>' >
+            <td>Destination Airport</td>
+            <td><select class="select form-control" id="DestinationAirport" name="DestinationAirport" value='<?php echo $row['DestinationAirport']; ?>' required>
                         <?php
                            mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
                            mysql_select_db('ap725');
                            
-                           $sql = "SELECT DestinationAirport FROM Airport";
+                           $sql = "SELECT Title FROM Airport";
                            $result = mysql_query($sql);
                            
                            while ($row = mysql_fetch_array($result)) {
-                               echo "<option value='" . $row['DestinationAirport'] . "'>" . $row['DestinationAirport'] . "</option>";
+                               echo "<option value='" . $row['Title'] . "'>" . $row['Title'] . "</option>";
                            	}
                            
                                     ?>
@@ -93,17 +87,18 @@ if($_GET['edit_id'])
         </tr>
 		<tr>
             <td>Arrival Date</td>
-            <td><input type="date"  name='Arrival Date' class='form-control' value='<?php echo $row['ArrivalDate']; ?>'  required /></td>
+            <td><input type='date' name='ArrivalDate' class='form-control'  placeholder='EX : EWR' value='<?php echo $row['ArrivalDate']; ?>' required></td>
         </tr>
  
         <tr>
             <td>Departure Date</td>
-            <td><input type="date" class="form-control" name="DepartureDate"    required></td>
+            <td><input type='date' name='DepartureDate' class='form-control'  placeholder='EX : EWR' value='<?php echo $row['DepartureDate']; ?>' required></td>
         </tr>
  
         <tr>
             <td>Aircraft Type</td>
-            <td><select id="AircraftType" name ="AircraftType" class="select form-control" required="required" onchange="showForm()">
+            <td><select id="AircraftType" name ="AircraftType" class="select form-control" placeholder='EX : All contents of Skid'  value='<?php echo $row['AircraftType']; ?>'required="required" onchange="showForm()">
+            
                <option >Select Type</option>
                <option value='B737'>B737</option>
                <option value='B747'>B747</option>
@@ -118,8 +113,8 @@ if($_GET['edit_id'])
             <td>Tail Number</td>
             <td>
             			<div id="f1" style="display:none"
-			    <form name="TailNumber">
-			        <select id="TailNumber" class="select form-control" required="required" onchange="showForm()">
+			    
+			        <select name="TailNumber" id="TailNumber" class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
 					mysql_select_db('ap725');
@@ -133,11 +128,11 @@ if($_GET['edit_id'])
 		
 		            ?>
 			        </select>
-			    </form>
+			    
 			</div>
 			<div id="f2" style="display:none">
-			    <form name="TailNumber">
-			        <select id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
+			    
+			        <select name="TailNumber" id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
 					mysql_select_db('ap725');
@@ -151,11 +146,11 @@ if($_GET['edit_id'])
 		
 		            ?>
 			        </select>
-			    </form>
+			    
 			</div>	
 			<div id="f3" style="display:none">
-			    <form name="TailNumber">
-			        <select id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
+			    
+			        <select name="TailNumber" id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
 					mysql_select_db('ap725');
@@ -169,11 +164,11 @@ if($_GET['edit_id'])
 		
 		            ?>
 			        </select>
-			    </form>
+			    
 			</div>
 			<div id="f4" style="display:none">
-			    <form name="TailNumber">
-			        <select id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
+			    
+			        <select name="TailNumber" id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
 					mysql_select_db('ap725');
@@ -187,10 +182,10 @@ if($_GET['edit_id'])
 		
 		            ?>
 			        </select>
-			    </form>
+			    
 			</div>
 			<div id="f5" style="display:none">
-			    <form name="TailNumber">
+			    
 			        <select id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
@@ -205,10 +200,10 @@ if($_GET['edit_id'])
 		
 		            ?>
 			        </select>
-			    </form>
+			    
 			</div>
 			<div id="f6" style="display:none">
-			    <form name="TailNumber">
+			    
 			        <select id="TailNumber"  class="select form-control" required="required" onchange="showForm()">
 					<?php
 					mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
@@ -223,7 +218,7 @@ if($_GET['edit_id'])
 		
 		            ?>
 			        </select>
-			    </form>
+			    
 			</div>			
 			<script type="text/javascript">
 			        function showForm() {

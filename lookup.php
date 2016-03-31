@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Example of Bootstrap 3 Tabs Methods</title>
+<title>Flight Lookup</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -16,6 +16,15 @@ $(document).ready(function(){
 	.bs-example{
 		margin: 20px;
 	}
+ .sansserif {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+th {
+
+font-family: "Comic Sans MS", cursive, sans-serif; }
+
+tbody {
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
 </style>
 </head>
 <body>
@@ -25,9 +34,9 @@ $(document).ready(function(){
         <li><a data-toggle="tab" href="#sectionB">Outbound Flight</a></li>
     </ul>
     <div class="tab-content">
-    <div><button></div>
+    <a href="index.html" class="btn btn-success btn pull-right"><span class="glyphicon glyphicon-home"></span> Homepage</a>
         <div id="sectionA" class="tab-pane fade in active">
-	    <h3>Inbound Flight</h3>
+	    <h3 class="sansserif"><center>Inbound Flight</center></h3>
 			<div class="container">
 			    <table class="table table-striped" class="table">
 			      <thead  class="thead-default">
@@ -47,16 +56,14 @@ $(document).ready(function(){
 			      </thead>	 
 			         <tbody>
 			        <?php
-			            //set up mysql connection
+			            
 			            mysql_connect("sql1.njit.edu", "ap725", "goober83") or die(mysql_error());
-			            //select database
 			            mysql_select_db("ap725") or die(mysql_error());
 
 			            $result = mysql_query("SELECT FlightNumber, TailNumber, ArrivalDate, AircrewID, AircraftType, PreviousAirport FROM Flights order by PreviousAirport") or die(mysql_error());
 
 			 
-			            while ($row = mysql_fetch_array($result)) {
-			                // Print out the contents of the entry 
+			            while ($row = mysql_fetch_array($result)) { 
 			                echo '<tr>';
 			                echo '<td>' . $row['FlightNumber'] . '</td>';
 			                echo '<td>' . $row['TailNumber'] . '</td>';
@@ -74,7 +81,7 @@ $(document).ready(function(){
 			  </div><!-- /container -->
         </div>
         <div id="sectionB" class="tab-pane fade">
-        		    <h3>Outbound Flight</h3>
+        		    <h3 class="sansserif"><center>Outbound Flight</center></h3>
 			<div class="container">
 			    <table class="table table-striped" class="table">
 			      <thead  class="thead-default">
@@ -94,16 +101,14 @@ $(document).ready(function(){
 			      </thead>	 
 			         <tbody>
 			        <?php
-			            //set up mysql connection
+			            
 			            mysql_connect("sql1.njit.edu", "ap725", "goober83") or die(mysql_error());
-			            //select database
 			            mysql_select_db("ap725") or die(mysql_error());
 
 			            $result = mysql_query("SELECT FlightNumber, TailNumber, DepartureDate, AircrewID, AircraftType, DestinationAirport FROM Flights order by DestinationAirport") or die(mysql_error());
 
 			 
 			            while ($row = mysql_fetch_array($result)) {
-			                // Print out the contents of the entry 
 			                echo '<tr>';
 			                echo '<td>' . $row['FlightNumber'] . '</td>';
 			                echo '<td>' . $row['TailNumber'] . '</td>';

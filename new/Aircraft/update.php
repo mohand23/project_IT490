@@ -8,7 +8,7 @@ require_once 'dbconfig.php';
 		$AircraftType = $_POST['AircraftType'];
 		
 		
-		$stmt = $db_con->prepare("UPDATE Aircrew SET AircraftType=:en WHERE TailNumber=:id");
+		$stmt = $db_con->prepare("UPDATE Aircraft SET AircraftType=:en WHERE TailNumber=:id");
 		$stmt->bindParam(":en", $AircraftType);
 		$stmt->bindParam(":id", $id);
 		

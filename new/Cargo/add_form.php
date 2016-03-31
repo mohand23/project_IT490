@@ -1,4 +1,4 @@
-
+  <script type="text/javascript" src="maxlength.js"></script>
 <style type="text/css">
 #dis{
 	display:none;
@@ -19,12 +19,12 @@
  
         <tr>
             <td>Skid ID</td>
-            <td><input type='number' name='SkidID' class='form-control'   placeholder='EX : 1234' required /></td>
+            <td><input type='number' data-maxsize="4" name='SkidID' class='form-control'   placeholder='EX : 1234' required /></td>
         </tr>
  
         <tr>
             <td>Skid Weight</td>
-            <td><input type='number' name='SkidWeight' class='form-control'  placeholder='EX : 5000' required></td>
+            <td><input type='number' data-maxsize="4" name='SkidWeight' class='form-control'  placeholder='EX : 5000' required></td>
         </tr>
  
         <tr>
@@ -34,7 +34,7 @@
 		
 		<tr>
             <td>Location</td>
-            <td><input type='text' name='Title' class='form-control'  placeholder='EX : EWR' required></td>
+            <td><input type='text' data-maxsize="3" name='Title' class='form-control'  placeholder='EX : EWR' required></td>
         </tr>
  
         <tr>

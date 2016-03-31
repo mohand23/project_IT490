@@ -1,6 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<style>
+.sansserif {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+th {
+
+font-family: "Comic Sans MS", cursive, sans-serif; }
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Insert, Update, Delete</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -44,9 +52,11 @@ $(document).ready(function(){
 
 	<div class="container">
       
-        <h2 class="form-signin-heading">Flights</h2><hr />
+        <h1 class="sansserif">Flights</h1><hr />
         <button class="btn btn-info" type="button" id="btn-add"> <span class="glyphicon glyphicon-pencil"></span> &nbsp; Add Flights</button>
         <button class="btn btn-info" type="button" id="btn-view"> <span class="glyphicon glyphicon-eye-open"></span> &nbsp; View Flights</button>
+        <a href="../../index.html" class="btn btn-success btn pull-right"><span class="glyphicon glyphicon-home"></span> Homepage</a>
+        <a href="../new.html" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
         <hr />
         
         <div class="content-loader">
@@ -90,10 +100,13 @@ $(document).ready(function(){
       
       
 			<td align="center">
-			<a id="<?php echo $row['FlightNumber']; ?>" class="edit-link" href="#" title="Edit">
-			Edit
-            </a> /<a id="<?php echo $row['FlightNumber']; ?>" class="delete-link" href="#" title="Delete">
-			Delete
+      
+             <a href="#" id="<?php echo $row['FlightNumber']; ?>"  class="btn btn-primary btn-xs edit-link"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+			
+            
+            <a href="#" id="<?php echo $row['FlightNumber']; ?>" class="btn btn-danger btn-xs delete-link"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+      
+   
             </a></td>
 			</tr>
 			<?php

@@ -25,19 +25,14 @@
  
         <tr>
             <td>Aircraft Type</td>
-             <td><select class="select form-control" name="AircraftType">
-                        <?php
-                           mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
-                           mysql_select_db('ap725');
-                           
-                           $sql = "SELECT AircraftType FROM Aircraft Group by AircraftType";
-                           $result = mysql_query($sql);
-                           
-                           while ($row = mysql_fetch_array($result)) {
-                               echo "<option value='" . $row['AircraftType'] . "'>" . $row['AircraftType'] . "</option>";
-                           	}
-                           
-                                    ?>
+             
+               <td><select id="AircraftType" name ="AircraftType" class="select form-control" required="required" onchange="showForm()">
+               <option >Select Type</option>
+               <option value='B737'>B737</option>
+               <option value='B747'>B747</option>
+               <option value='B767'>B767</option>
+               <option value='B777'>B777</option>
+               <option value='B787'>B787</option>
                      </select></td>
         </tr>
  

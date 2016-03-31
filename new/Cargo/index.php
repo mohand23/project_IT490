@@ -48,6 +48,8 @@ $(document).ready(function(){
         <h5 class="form-signin-heading" style="color: red;"> ***   Please note if a SkidId does  not have a Title it is attached to a Flightnumber and on a Mission   *** </h5><hr />
         <button class="btn btn-info" type="button" id="btn-add"> <span class="glyphicon glyphicon-pencil"></span> &nbsp; Add Skid ID</button>
         <button class="btn btn-info" type="button" id="btn-view"> <span class="glyphicon glyphicon-eye-open"></span> &nbsp; View Skid ID</button>
+        <a href="../../index.html" class="btn btn-success btn pull-right"><span class="glyphicon glyphicon-home"></span> Homepage</a>
+        <a href="../new.html" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
         <hr />
         
         <div class="content-loader">
@@ -79,11 +81,10 @@ $(document).ready(function(){
       
       
 			<td align="center">
-			<a id="<?php echo $row['SkidID']; ?>" class="edit-link" href="#" title="Edit">
-			Edit
-            </a> /<a id="<?php echo $row['SkidID']; ?>" class="delete-link" href="#" title="Delete">
-			Delete
-            </a></td>
+			<a href="#" id="<?php echo $row['SkidID']; ?>"  class="btn btn-primary btn-xs edit-link"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+			
+            
+            <a href="#" id="<?php echo $row['SkidID']; ?>" class="btn btn-danger btn-xs delete-link"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 			</tr>
 			<?php
 		}
