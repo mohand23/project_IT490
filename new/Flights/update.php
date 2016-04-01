@@ -8,27 +8,24 @@ require_once 'dbconfig.php';
 		$AircrewID = $_POST['AircrewID'];
 		$PreviousAirport = $_POST['PreviousAirport'];
 		$ArrivalDate = $_POST['ArrivalDate'];
-		$TailNumber = $_POST['TailNumber'];
+    $TailNumber = $_POST['TailNumber'];
 		$AircraftType = $_POST['AircraftType'];
 		$DepartureDate = $_POST['DepartureDate'];
-		$DestinationAirport = $_POST['DestinationAirport'];
+    $DestinationAirport = $_POST['DestinationAirport'];
 		$Fuel = $_POST['Fuel'];
 		$SkidID = $_POST['SkidID'];
 		
-		$stmt = $db_con->prepare("UPDATE Flights SET AircrewID=:en, PreviousAirport=:ed, ArrivalDate=:es, TailNumber=:eq, AircraftType=:ew, DepartureDate=:ee, DestinationAirport=:er, Fuel=:et, SkidID=:ey, WHERE FlightNumber=:id");
-		$stmt->bindParam(":en", $AircrewID);
-		$stmt->bindParam(":ed", $PreviousAirport);
-		$stmt->bindParam(":es", $ArrivalDate);
-		$stmt->bindParam(":eq", $TailNumber);
-		$stmt->bindParam(":ew", $AircraftType);
-		$stmt->bindParam(":ee", $DepartureDate);
-		$stmt->bindParam(":er", $DestinationAirport);
-		$stmt->bindParam(":et", $Fuel);
-		$stmt->bindParam(":ey", $SkidID);
+		$stmt = $db_con->prepare("UPDATE Flights SET AircrewID=:air, PreviousAirport=:prev, ArrivalDate=:arriv, TailNumber=:tail, AircraftType=:typ, DepartureDate=:dep, DestinationAirport=:des, Fuel=:fu, SkidID=:sk WHERE FlightNumber=:id");
+		$stmt->bindParam(":air", $AircrewID);
+		$stmt->bindParam(":prev", $PreviousAirport);
+		$stmt->bindParam(":arriv", $ArrivalDate);
+    $stmt->bindParam(":tail", $TailNumber);
+		$stmt->bindParam(":typ", $AircraftType);
+		$stmt->bindParam(":dep", $DepartureDate);
+    $stmt->bindParam(":des", $DestinationAirport);
+		$stmt->bindParam(":fu", $Fuel);
+		$stmt->bindParam(":sk", $SkidID);
 		$stmt->bindParam(":id", $id);
-		
-		
-	
 		
 		if($stmt->execute())
 		{

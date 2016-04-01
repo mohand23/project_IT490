@@ -1,6 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<style>
+.sansserif {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+th {
+
+font-family: "Comic Sans MS", cursive, sans-serif; }
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Insert, Update, Delete</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -44,7 +52,7 @@ $(document).ready(function(){
 
 	<div class="container">
       
-        <h2 class="form-signin-heading">Aircrew ID</h2><hr />
+        <h1 class="sansserif">Aircrew ID</h1><hr />
         <button class="btn btn-info" type="button" id="btn-add"> <span class="glyphicon glyphicon-pencil"></span> &nbsp; Add Aircrew ID</button>
         <button class="btn btn-info" type="button" id="btn-view"> <span class="glyphicon glyphicon-eye-open"></span> &nbsp; View Aircrew ID</button>
         <a href="../../index.html" class="btn btn-success btn pull-right"><span class="glyphicon glyphicon-home"></span> Homepage</a>

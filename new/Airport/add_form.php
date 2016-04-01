@@ -9,7 +9,7 @@
 	
     
     <div id="dis">
-    <!-- here message will be displayed -->
+    
 	</div>
         
  	

@@ -30,11 +30,12 @@ font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; }
 <body>
 <div class="bs-example">
     <ul class="nav nav-tabs" id="myTab">
+    <a href="index.html" class="btn btn-success btn pull-right"><span class="glyphicon glyphicon-home"></span> Homepage</a>
         <li><a data-toggle="tab" href="#sectionA">Location</a></li>
         <li><a data-toggle="tab" href="#sectionB">Mission</a></li>
     </ul>
     <div class="tab-content">
-    <a href="index.html" class="btn btn-success btn pull-right"><span class="glyphicon glyphicon-home"></span> Homepage</a>
+    
         <div id="sectionA" class="tab-pane fade in active">
 	    <h3 class="sansserif"><center>All Skid ID that are stuck at a location</center></h3>
 			<div class="container">

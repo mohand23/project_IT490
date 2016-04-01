@@ -34,7 +34,21 @@
 		
 		<tr>
             <td>Location</td>
-            <td><input type='text' data-maxsize="3" name='Title' class='form-control'  placeholder='EX : EWR' required></td>
+            <td><select class="select form-control" name="Title">
+            <option> Select Location</option>
+                        <?php
+                           mysql_connect('sql1.njit.edu', 'ap725', 'goober83');
+                           mysql_select_db('ap725');
+                           
+                           $sql = "SELECT Title FROM Airport";
+                           $result = mysql_query($sql);
+                           
+                           while ($row = mysql_fetch_array($result)) {
+                               echo "<option value='" . $row['Title'] . "'>" . $row['Title'] . "</option>";
+                           	}
+                           
+                                    ?>
+                        </select></td>
         </tr>
  
         <tr>
